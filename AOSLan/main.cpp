@@ -60,13 +60,13 @@ void cpuschedule::Fcfs()
     tat[i]=B[i]+Wt[i];     //calculate turnaround time
         total+=tat[i];
     }
-	//Calculating Average Weighting Time
+	//Calculating Average Waiting Time
 	for(i=1;i<=n;i++)
 		Twt=Twt+Wt[i];
 	Awt=Twt/n;
 	int tatt=total/n;
-	cout<<"\n Total   Weighting Time="<<Twt;
-	cout<<"\n Average Weighting Time="<<Awt<<"";
+	cout<<"\n Total   Waiting Time="<<Twt;
+	cout<<"\n Average Waiting Time="<<Awt<<"";
 	cout<<"\n Average Turnaround Time="<<tatt<<"";
 }
 
@@ -100,19 +100,19 @@ void cpuschedule::Sjf()
 	{
 		Wt[i]=B[i-1]+Wt[i-1];
 	}
-	//calculating Average Weighting Time
+	//calculating Average Waiting Time
 	for(i=1;i<=n;i++){
 		Twt=Twt+Wt[i];
     }
 
-      for (i=1;i<=n; i++){
+      for (i=1;i<n; i++){
     tat[i]=Bu[i]+Wt[i];     //calculate turnaround time
         total+=tat[i];
     }
 	Awt=Twt/n;
 	int tatt=total/n;
-	cout<<"\n Total   Weighting Time="<<Twt;
-	cout<<"\n Average Weighting Time="<<Awt<<"";
+	cout<<"\n Total   Waiting Time="<<Twt;
+	cout<<"\n Average Waiting Time="<<Awt<<"";
 	cout<<"\n Average Turnaround Time="<<tatt<<"";
 }
 
@@ -187,12 +187,12 @@ void cpuschedule::SjfNp()
 			cout<<"Wt"<<i<<"=="<<Wt[i];
 
 
-		//calculating average weighting Time
+		//calculating average Waiting Time
 		for(i=1;i<=n;i++)
 			Twt=Twt+(Wt[i]-A[i]);
 		Awt=Twt/n;
-	cout<<"\n Total   Weighting Time="<<Twt<<"";
-	cout<<"\n Average Weighting Time="<<Awt<<"";
+	cout<<"\n Total   Waiting Time="<<Twt<<"";
+	cout<<"\n Average Waiting Time="<<Awt<<"";
 }
 
 //Priority Algorithm
@@ -231,7 +231,7 @@ void cpuschedule::Priority()
 		j++;
 	}
 
-	//calculating average weighting Time
+	//calculating average Waiting Time
 	for(i=1;i<=n;i++)
 		Twt=Twt+Wt[i];
 	Awt=Twt/n;
@@ -240,8 +240,8 @@ void cpuschedule::Priority()
         total+=tat[i];
     }
     tatt=total/n;
-	cout<<"\n Total   Weighting Time="<<Twt<<"";
-	cout<<"\n Average Weighting Time="<<Awt<<"";
+	cout<<"\n Total   Waiting Time="<<Twt<<"";
+	cout<<"\n Average Waiting Time="<<Awt<<"";
 	cout<<"\n Average TurnAround Time="<<tatt<<"";
 }
 
@@ -368,11 +368,11 @@ cout<<"\n after subtracting arrival time";
 		Wt[i]=Wt[i]-A[i];
 		cout<<"WT["<<i<<"]="<<Wt[i];
 	}
-	//Calculating Average Weighting time
+	//Calculating Average Waiting time
 	for(i=1;i<=n;i++)
 		Twt=Twt+Wt[i];
 	Awt=Twt/n;
-	cout<<"\n Average Weighting Time="<<Awt;
+	cout<<"\n Average Waiting Time="<<Awt;
 
 
 
@@ -442,7 +442,7 @@ void cpuschedule::RoundRobin()
 		}
 		cout<<"";
 	}
-	//calculating weighting time
+	//calculating Waiting time
 	int x=1;
 	i=1;
 	while(x<=n)
@@ -474,14 +474,14 @@ void cpuschedule::RoundRobin()
 		x++;
 	}
 	for(i=1;i<=n;i++)
-		cout<<"\n Weighting Time for process P"<<i<<"="<<Wt[i];
+		cout<<"\n Waiting Time for process P"<<i<<"="<<Wt[i];
 
-	//calculating Average Weighting Time
+	//calculating Average Waiting Time
 	for(i=1;i<=n;i++)
 		Twt=Twt+Wt[i];
 	Awt=Twt/n;
-	cout<<"\n Total   Weighting Time="<<Twt;
-	cout<<"\n Average Weighting Time="<<Awt<<"";
+	cout<<"\n Total   Waiting Time="<<Twt;
+	cout<<"\n Average Waiting Time="<<Awt<<"";
 }
 
 int main()
